@@ -1,9 +1,27 @@
-## Robot Action Development and Tour Navigation
+# Ruotong Jia
 
-I work on humanoid-robot interaction and navigation prototypes. My recent engineering work includes:
+AI algorithm engineer working on humanoid robot control, embodied intelligence, and mobile robot navigation.
 
-- Developing reusable upper-body gesture states with smooth waypoint interpolation and gradual gain ramp-up while preserving the learned locomotion and balance policy.
-- Preparing a ROS 2/Nav2 tour-navigation prototype with route management, arrival events, pause/resume/cancel handling, guarded velocity output, and sensor-loss shutdown.
-- Evaluating the design through repeatable simulation cases and documenting the boundary between navigation-layer validation and real-robot acceptance.
+## Robot Action Development
 
-The implementation materials are maintained privately because they depend on vendor controller interfaces and company-specific integration details. Public descriptions refer to this work as a prototype/reference implementation; they do not claim release of company source code or completion of physical-robot acceptance.
+- Reusable upper-body action states
+- Smooth joint-space interpolation
+- Pause, resume, completion, and safety-stop transitions
+- Motion limits for stable execution
+
+## Tour Navigation
+
+- ROS 2/Nav2 route management
+- Goal arrival events and cancellation
+- Pause and resume handling
+- Velocity limiting and sensor-fault shutdown
+
+## Repository
+
+The `robot_control` package contains the control modules. Tests are in `tests/`.
+
+Run the tests with:
+
+```bash
+python -m unittest discover -s tests -p 'test_*.py'
+```
