@@ -1,8 +1,4 @@
-"""Humanoid action controller with bounded interpolation and fail-safe state transitions.
-
-This is a reconstructed portfolio example. It contains no vendor SDK calls,
-robot model files, calibration values, or company-specific interfaces.
-"""
+"""Humanoid action controller with bounded interpolation and fail-safe state transitions."""
 
 from __future__ import annotations
 
@@ -22,7 +18,8 @@ def interpolate_pose(
     progress = _clamp(alpha, 0.0, 1.0)
     names = set(start) | set(target)
     return {
-        name: start.get(name, 0.0) + progress * (target.get(name, 0.0) - start.get(name, 0.0))
+        name: start.get(name, 0.0)
+        + progress * (target.get(name, 0.0) - start.get(name, 0.0))
         for name in sorted(names)
     }
 
@@ -37,7 +34,7 @@ class ActionStatus(str, Enum):
 
 @dataclass
 class GestureController:
-    """Small deterministic state machine for a bounded upper-body gesture."""
+    """Deterministic state machine for a bounded upper-body gesture."""
 
     target_pose: Mapping[str, float]
     duration_s: float = 2.0
@@ -73,10 +70,8 @@ class GestureController:
 
         self.elapsed_s = min(self.duration_s, self.elapsed_s + max(0.0, dt_s))
         progress = self.elapsed_s / max(self.duration_s, 1e-6)
-        # Smoothstep avoids a discontinuous command at the beginning/end.
         eased = progress * progress * (3.0 - 2.0 * progress)
         self.current_pose = interpolate_pose(self.start_pose, self.target_pose, eased)
         if self.elapsed_s >= self.duration_s - 1e-9:
             self.status = ActionStatus.COMPLETE
         return dict(self.current_pose)
-
