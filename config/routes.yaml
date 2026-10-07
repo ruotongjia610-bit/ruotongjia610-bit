@@ -1,0 +1,10 @@
+waypoints:
+  - name: lobby
+    x_m: 1.0
+    y_m: 0.0
+    tolerance_m: 0.35
+  - name: laboratory
+    x_m: 4.0
+    y_m: 1.5
+    tolerance_m: 0.35
+
