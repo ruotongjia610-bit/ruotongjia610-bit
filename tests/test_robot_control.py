@@ -4,7 +4,7 @@ from robot_control.gesture_controller import ActionStatus, GestureController
 from robot_control.navigation_controller import Goal, SafetyGuard, TourRoute, Velocity
 
 
-class ActionDemoTests(unittest.TestCase):
+class ActionControllerTests(unittest.TestCase):
     def test_gesture_reaches_target_smoothly(self):
         controller = GestureController({"left_shoulder": 0.8}, duration_s=1.0)
         controller.start({"left_shoulder": 0.0})
@@ -23,7 +23,7 @@ class ActionDemoTests(unittest.TestCase):
         self.assertEqual(controller.step(0.5), pose)
 
 
-class NavigationDemoTests(unittest.TestCase):
+class NavigationControllerTests(unittest.TestCase):
     def test_guard_clamps_velocity(self):
         guard = SafetyGuard(max_linear_mps=0.3, max_angular_rps=0.5)
         self.assertEqual(guard.command(Velocity(1.0, -1.0)), Velocity(0.3, -0.5))
@@ -41,4 +41,3 @@ class NavigationDemoTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
