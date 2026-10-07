@@ -1,24 +1,15 @@
-# Robot action and tour-navigation reference demos
+# Robot Action and Tour Navigation
 
-These small Python examples are a vendor-neutral reconstruction prepared for a
-portfolio showcase. They demonstrate the engineering patterns used in the
-project without distributing company source code, vendor SDKs, robot models,
-calibration data, or real operational logs.
+Python modules for humanoid action control and tour-navigation logic.
 
-## What the examples show
+## Contents
 
-- Smooth named-joint pose interpolation with a bounded action state machine.
-- Pause, resume, completion, and fail-safe stopping for an action controller.
-- Tour-goal sequencing with arrival events and cancel handling.
-- Velocity limiting and fail-closed behavior when perception is paused or
-  unhealthy.
-- Unit tests for the control and navigation invariants.
+- `robot_control/gesture_controller.py`: action state machine and smooth pose interpolation
+- `robot_control/navigation_controller.py`: route sequencing, arrival events, velocity limits, and fault handling
+- `tests/test_robot_control.py`: unit tests for action and navigation behavior
 
-Run the tests with:
+## Test
 
 ```bash
-python -m unittest discover -s public_showcase -p 'test_*.py'
+python -m unittest discover -s tests -p 'test_*.py'
 ```
-
-The examples are reference implementations, not a claim that this repository
-contains the company's original deployment code.
