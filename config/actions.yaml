@@ -1,0 +1,8 @@
+actions:
+  greeting:
+    duration_s: 2.0
+    max_joint_speed: 1.5
+  pointing:
+    duration_s: 1.5
+    max_joint_speed: 1.2
+
