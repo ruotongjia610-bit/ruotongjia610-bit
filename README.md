@@ -14,7 +14,7 @@ Reusable Python modules for upper-body action control and multi-stop tour naviga
 - Velocity limiting with a fail-closed safety gate.
 - Deterministic unit tests and example configurations.
 
-See the [robot control package](robot_control/README.md).
+See [projects/humanoid-robot-control](projects/humanoid-robot-control/README.md).
 
 ### AGV Field-Survey QA
 
@@ -33,15 +33,14 @@ The AGV directory contains a reproducible public reconstruction. It does not inc
 ## Repository layout
 
 ```text
-robot_control/                    robot actions and tour navigation
-projects/llm-field-survey-qa/    AGV field-survey QA pipeline
-config/                           example action and route configuration
-tests/                            deterministic robot-control tests
-docs/                             architecture notes
+projects/humanoid-robot-control/  humanoid robot actions and tour navigation
+projects/llm-field-survey-qa/     AGV field-survey QA pipeline
+.github/workflows/                 repository tests
 ```
 
-## Test robot-control modules
+## Test the robot project
 
 ```bash
+cd projects/humanoid-robot-control
 python -m unittest discover -s tests -p 'test_*.py'
 ```
