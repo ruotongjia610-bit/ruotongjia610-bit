@@ -1,0 +1,5 @@
+2026-10-09 INFO project=agv_field_survey_qa backend=deterministic_mock provenance=public_reconstruction
+2026-10-09 INFO dataset=data/qa_reconstructed.jsonl records=20 refusal_records=3
+2026-10-09 INFO request_id=smoke-001 question_category=wifi_5g status=200
+2026-10-09 INFO request_id=smoke-002 question_category=out_of_scope status=200 refusal=true
+2026-10-09 INFO note=This is a reconstruction smoke test, not the historical company deployment log.
