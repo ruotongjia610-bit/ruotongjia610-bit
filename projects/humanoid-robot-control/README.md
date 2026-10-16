@@ -1,6 +1,10 @@
 # Robot Action and Tour Navigation
 
+[Portfolio](../../portfolio/README.md) · [Current navigation work](../../portfolio/robot-navigation.md)
+
 Python implementation of reusable robot action control and tour-navigation mission logic. The modules separate motion generation, safety checks, route management, sensor health, and command gating so each part can be tested in isolation.
+
+This is a generic public example. It is not the company's production controller, a locomotion policy, or the complete current navigation system. Its deterministic tests verify software behavior without commanding a robot.
 
 ## Features
 

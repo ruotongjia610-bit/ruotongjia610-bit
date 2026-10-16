@@ -1,8 +1,10 @@
 # AGV Field-Survey QA — Public Reproducible Reconstruction
 
-This directory is a public-safe reconstruction of Jia Ruotong's AGV field-survey question-answering project. It is prepared for interview explanation and reproducibility practice.
+This directory is a public reconstruction of Ruotong Jia's AGV field-survey question-answering project, prepared to demonstrate the data, training, evaluation and inference workflow.
 
-**It is not the original company source code, training dataset, model checkpoint, private deployment log, or internal validation split.** The original project facts are recorded in the CV and interview notes: Qwen-7B, QLoRA adaptation, domain QA preparation, Wi-Fi/5G confusion handling, refusal examples, an internal inference tool, and a reported 97.6% exact match on an internal validation set. That internal result is not reproduced by this package.
+**It is not the original company source code, training dataset, model checkpoint, private deployment log, or internal validation split.** My work included domain QA preparation, Qwen-7B adaptation with QLoRA, Wi-Fi/5G confusion cases, refusal examples and inference integration. Internal evaluation figures are not reported in this public documentation.
+
+[Project portfolio](../../portfolio/README.md)
 
 ## What is included
 
@@ -43,8 +45,8 @@ python train_qlora.py \
   --use_4bit
 ```
 
-The script saves the adapter and tokenizer. It does not claim that this reconstruction produces the historical 97.6% result.
+The script saves the adapter and tokenizer. Training this reconstruction requires a separately supplied compatible model and an appropriate GPU environment. No trained-model performance result is claimed by the mock tests.
 
-## How to describe it in an interview
+## Validation scope
 
-Say that the historical project used Qwen-7B with QLoRA for AGV field-survey QA, including domain-data preparation, Wi-Fi/5G confusion cases, refusal cases, internal inference integration, and an internal validation result. Use this package only to explain the pipeline and to demonstrate a public-safe reproduction structure. Do not call the reconstruction data the company's original data, and do not claim that the mock log is a historical deployment log.
+The dataset and mock tests demonstrate a reproducible software path. They do not reproduce historical company training or deployment. Generalized example records are not the original company data, and mock-service logs are not evidence of a trained model's answer quality.
